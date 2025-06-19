@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-function Login({handelLogin}) {
+function Login({handleLogin}) {
   const submitHandel = () => {
     // e.preventDefault() ;
-    console.log(`form submit hoo gaya `);
-    console.log(`email of user is: ${email}`);
-    console.log(`and password of the use is : ${password}`);
+    // console.log(`form submit hoo gaya `);
+    // console.log(`email of user is: ${email}`);
+    // console.log(`and password of the use is : ${password}`);
     
-    handelLogin(email, password) ;
+    handleLogin(email, password) ;
 
     // resetting email and password to blank to resue the login page
     setEmail('') ;
@@ -15,7 +15,7 @@ function Login({handelLogin}) {
     
   };
 
-    // console.log(handelLogin);
+    // console.log(handleLogin);
     
   const [email, setEmail] = useState('') ;
   const [password, setPassword] = useState('') ;

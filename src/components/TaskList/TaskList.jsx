@@ -1,40 +1,36 @@
 import React from "react";
+import AcceptTask from "./AcceptTask";
+import NewTask from "./NewTask";
+import CompleteTask from "./CompleteTask";
+import FailedTask from "./FailedTask";
 
-function TaskList() {
+function TaskList({ data }) {
+  // console.log(data);
+
   return (
     <div className="h-[50%] overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-1 mt-16  tasklist">
-      <div className="h-full w-[300px] bg-red-400 rounded-xl flex-shrink-0 p-5">
-        <div className="flex justify-between">
-          <h3 className="bg-red-600 px-3 py-1 rounded-xl text-sm"> High</h3>
-          <h4 className="text-sm">20 Feb 2024</h4>
-        </div>
-        <h2 className=" mt-5 text-2xl font-semibold">Make a youtube video</h2>
-        <p className="text-sm mt-2" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio pariatur libero quam rem, earum ducimus.</p>
-      </div>
-      <div className="h-full w-[300px] bg-green-400 rounded-xl flex-shrink-0 p-5">
-        <div className="flex justify-between">
-          <h3 className="bg-red-600 px-3 py-1 rounded-xl text-sm"> High</h3>
-          <h4 className="text-sm">20 Feb 2024</h4>
-        </div>
-        <h2 className=" mt-5 text-2xl font-semibold">Make a youtube video</h2>
-        <p className="text-sm mt-2" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio pariatur libero quam rem, earum ducimus.</p>
-      </div>
-      <div className="h-full w-[300px] bg-blue-400 rounded-xl flex-shrink-0 p-5">
-        <div className="flex justify-between">
-          <h3 className="bg-red-600 px-3 py-1 rounded-xl text-sm"> High</h3>
-          <h4 className="text-sm">20 Feb 2024</h4>
-        </div>
-        <h2 className=" mt-5 text-2xl font-semibold">Make a youtube video</h2>
-        <p className="text-sm mt-2" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio pariatur libero quam rem, earum ducimus.</p>
-      </div>
-      <div className="h-full w-[300px] bg-yellow-400 rounded-xl flex-shrink-0 p-5">
-        <div className="flex justify-between">
-          <h3 className="bg-red-600 px-3 py-1 rounded-xl text-sm"> High</h3>
-          <h4 className="text-sm">20 Feb 2024</h4>
-        </div>
-        <h2 className=" mt-5 text-2xl font-semibold">Make a youtube video</h2>
-        <p className="text-sm mt-2" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio pariatur libero quam rem, earum ducimus.</p>
-      </div>
+      {/* <AcceptTask /> */}
+      {/* <NewTask /> */}
+      {/* <CompleteTask /> */}
+      {/* <FailedTask /> */}
+
+      {data.tasks.map((elem, idx) => {
+        // console.log(elem);
+        if (elem.active) {
+          return <AcceptTask key={idx} />
+        }
+          if (elem.NewTask) {
+            return<NewTask key={idx} />
+          }
+          if (elem.completed) {
+            return <CompleteTask key={idx} />
+          }
+          if (elem.failed)
+          {
+            return <FailedTask key={idx} />
+          }
+        
+      })}
     </div>
   );
 }
