@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { setLocalStorage } from "../../utils/localStorage";
 
-function Header({data}) {
+function Header(props) {
   // console.log(data);
 
   // const [userName, setUserName] = useState('') ;
@@ -20,7 +20,12 @@ function Header({data}) {
   // setUserName(data?.firstName || "Admin") ;
   const logOutUser = () => {
     localStorage.setItem('loggedInUser', '') ;
-    window.location.reload() ;
+    props.changeUser('')
+    // window.location.reload() ;
+
+    console.log(props.changeUser);
+    
+
   }
   
   return (

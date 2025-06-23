@@ -59,8 +59,8 @@ function App() {
   return (
     <>
       {user ? "" : <Login handleLogin={handleLogin} />}
-      {user === "admin" ? <AdminDashboard data={loggedInUserDate} /> : ""}
-      {user === "employee" ? <EmployeeDashboard data={loggedInUserDate} /> : ""}
+      {user === "admin" ? <AdminDashboard changeUser = {setUser} /> : ""}
+      {user === "employee" ? <EmployeeDashboard changeUser = {setUser} data={loggedInUserDate} /> : ""}
     </>
   );
 }

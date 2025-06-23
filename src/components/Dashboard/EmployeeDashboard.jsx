@@ -3,7 +3,7 @@ import Header from "../others/Header";
 import TaskListNumbers from "../others/TaskListNumbers";
 import TaskList from "../TaskList/TaskList";
 
-function EmployeeDashboard({data}) {
+function EmployeeDashboard(props) {
 
   // console.log(`After the login of employee data is : `);
   // console.log(data);
@@ -14,9 +14,9 @@ function EmployeeDashboard({data}) {
       {/* <h1>{data.id}</h1>
       <h2>First Name : {data.firstName}</h2> */}
       {/* Employee  */}
-      <Header data = {data} />
-      <TaskListNumbers data = {data} />
-      <TaskList data = {data} />
+      <Header changeUser = {props.changeUser} data = {props.data} />
+      <TaskListNumbers data = {props.data} />
+      <TaskList data = {props.data} />
     </div>
   );
 }
